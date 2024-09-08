@@ -20,6 +20,12 @@ public class Patient {
 
 	@Column(name = "email")
 	private String email;
+	
+	@Column(name = "gender")
+	private String gender;
+
+	@Column(name = "bloodtype")
+	private String bloodType;
 
 	public Long getId() {
 		return id;
@@ -61,10 +67,4 @@ public class Patient {
 		this.bloodType = bloodType;
 	}
 
-	@Column(name = "gender")
-	private String gender;
-
-	@Column(name = "bloodtype")
-	private String bloodType;
-	
 }
