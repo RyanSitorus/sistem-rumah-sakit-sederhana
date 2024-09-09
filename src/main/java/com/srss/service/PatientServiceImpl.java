@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.srss.entity.Patient;
+import com.srss.entity.Pasien;
 import com.srss.repository.PatientRepository;
 
 @Service
@@ -16,24 +16,24 @@ public class PatientServiceImpl implements PatientService{
 
 	
 	@Override
-	public List<Patient> getAllPatient() {
+	public List<Pasien> getAllPatient() {
 		return patientRepository.findAll();
 	}
 
 	@Override
-	public Patient savePatient(Patient patient) {
-		return patientRepository.save(patient);
+	public Pasien savePatient(Pasien pasien) {
+		return patientRepository.save(pasien);
 	}
 
 
 	@Override
-	public Patient getPatientById(Long id) {
+	public Pasien getPatientById(Long id) {
 		return patientRepository.findById(id).get();
 	}
 
 	@Override
-	public Patient updatePatient(Patient patient) {
-		return patientRepository.save(patient);
+	public Pasien updatePatient(Pasien pasien) {
+		return patientRepository.save(pasien);
 	}
 
 

@@ -2,18 +2,18 @@ package com.srss.service;
 
 import java.util.List;
 
-import com.srss.entity.Patient;
+import com.srss.entity.Pasien;
 
 
 public interface PatientService {
 
-	List<Patient> getAllPatient();
+	List<Pasien> getAllPatient();
 	
-	Patient savePatient(Patient student);
+	Pasien savePatient(Pasien student);
 
-	Patient getPatientById(Long id);
+	Pasien getPatientById(Long id);
 
-	Patient updatePatient(Patient student);
+	Pasien updatePatient(Pasien student);
 
 	void deletePatientById(Long id);
 }

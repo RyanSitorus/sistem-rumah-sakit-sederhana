@@ -17,7 +17,7 @@ public class PatientController {
 	public String listStudents(Model model) {
 
 		model.addAttribute("patients", patientService.getAllPatient());
-		System.out.println(patientService.getAllPatient().get(0).getFullName());
+		System.out.println(patientService.getAllPatient().get(0).getNamaPasien());
 		return "dashboard";
 	}
 }
