@@ -35,8 +35,8 @@ public class UserService{
         users.add(user);
     }
 
-    public UserModel findByLogin(String login) {
-        return users.stream().filter(user -> user.getUserName().equals(login))
+    public UserModel findByName(String username) {
+        return users.stream().filter(user -> user.getUserName().equals(username))
                 .findFirst()
                 .orElse(null);
     }

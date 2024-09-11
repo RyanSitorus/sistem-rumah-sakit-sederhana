@@ -1,12 +1,18 @@
 package com.srss.entity;
 
+import java.util.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 @Entity
 @Table(name = "pasien")
 public class Pasien {
@@ -26,7 +32,8 @@ public class Pasien {
 	private int nomorHp;
 
 	@Column(name = "tanggal_lahir")
-	private String tanggalLahir;
+	@Temporal(TemporalType.DATE)
+	private Date tanggalLahir;
 
 	@Column(name = "jenis_kelamin")
 	private String jenisKelamin;
@@ -36,6 +43,9 @@ public class Pasien {
 
 	@Column(name = "alamat")
 	private String alamat;
+
+	public Pasien() {
+	}
 
 	public Long getIdPasien() {
 		return idPasien;
@@ -69,14 +79,6 @@ public class Pasien {
 		this.nomorHp = nomorHp;
 	}
 
-	public String getTanggalLahir() {
-		return tanggalLahir;
-	}
-
-	public void setTanggalLahir(String tanggalLahir) {
-		this.tanggalLahir = tanggalLahir;
-	}
-
 	public String getJenisKelamin() {
 		return jenisKelamin;
 	}
@@ -99,6 +101,14 @@ public class Pasien {
 
 	public void setAlamat(String alamat) {
 		this.alamat = alamat;
+	}
+
+	public Date getTanggalLahir() {
+		return tanggalLahir;
+	}
+
+	public void setTanggalLahir(Date tanggalLahir) {
+		this.tanggalLahir = tanggalLahir;
 	}
 
 }

@@ -13,8 +13,6 @@ public class DashboardController {
 //	private PatientService dashboardService;
 	
 	public static final String USER_LOGIN = "userLogin";
-
-	
 	
 	@GetMapping("/")
 	public String listStudents(Model model, @AuthenticationPrincipal UserDetails userDetails) {

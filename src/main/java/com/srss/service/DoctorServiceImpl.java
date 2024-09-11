@@ -21,8 +21,8 @@ public class DoctorServiceImpl implements DoctorService{
 	}
 
 	@Override
-	public Dokter saveDoctor(Dokter patient) {
-		return doctorRepository.save(patient);
+	public Dokter saveDoctor(Dokter dokter) {
+		return doctorRepository.save(dokter);
 	}
 
 	@Override
@@ -31,8 +31,8 @@ public class DoctorServiceImpl implements DoctorService{
 	}
 
 	@Override
-	public Dokter updateDoctor(Dokter patient) {
-		return doctorRepository.save(patient);
+	public Dokter updateDoctor(Dokter dokter) {
+		return doctorRepository.save(dokter);
 	}
 
 

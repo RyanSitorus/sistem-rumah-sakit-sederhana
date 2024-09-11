@@ -39,20 +39,25 @@
 		<table class="table table-striped table-bordered">
 			<thead class="table-dark">
 				<tr>
-					<th>Student First Name</th>
-					<th>Student Last Name</th>
-					<th>Student Email</th>
-					<th>Student Gender</th>
-					<th>Student Religion</th>
+					<th>nomor pasien</th>
+					<th>nama pasien</th>
+					<th>nomor hp</th>
+					<th>tanggal lahir</th>
+					<th>jenis kelamin</th>
+					<th>kategori</th>
+					<th>alamat</th>
 				</tr>
 			</thead>
 
 			<tbody>
 				<tr th:each="patient : ${patients}">
-					<td th:text="${patient.fullName}"></td>
-					<td th:text="${patient.email}"></td>
-					<td th:text="${patient.gender}"></td>
-					<td th:text="${patient.bloodType}"></td>
+					<td th:text="${patient.nomorPasien}"></td>
+					<td th:text="${patient.namaPasien}"></td>
+					<td th:text="${patient.nomorHp}"></td>
+					<td th:text="${patient.tanggalLahir}"></td>
+					<td th:text="${patient.jenisKelamin}"></td>
+					<td th:text="${patient.kategori}"></td>
+					<td th:text="${patient.alamat}"></td>
 				</tr>
 			</tbody>
 		</table>
