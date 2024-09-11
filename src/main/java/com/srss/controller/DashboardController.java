@@ -21,8 +21,6 @@ public class DashboardController {
 		String userRole = userDetails.getAuthorities().stream().map(it -> it.getAuthority()).toList().get(0);
 		model.addAttribute(USER_LOGIN, userName);
 
-//		model.addAttribute("patients", dashboardService.getAllPatient());
-//		System.out.println("tes");
 		model.addAttribute("UserRole", userRole);
 		return "dashboard";
 	}

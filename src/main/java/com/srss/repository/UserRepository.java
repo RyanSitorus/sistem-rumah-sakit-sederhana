@@ -8,4 +8,5 @@ import com.srss.entity.UserModel;
 @Repository
 public interface UserRepository extends JpaRepository<UserModel, Long> {
 
+	UserModel findByuserName(String userName);
 }

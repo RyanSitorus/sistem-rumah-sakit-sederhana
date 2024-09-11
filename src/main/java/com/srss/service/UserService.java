@@ -1,44 +1,37 @@
 package com.srss.service;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.srss.entity.UserModel;
 import com.srss.entity.UserRole;
+import com.srss.repository.UserRepository;
 
-import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
 public class UserService{
 	
-	private static List<UserModel> users = new ArrayList<>();
+	@Autowired
+	private UserRepository userRepository;
 
-    private final PasswordEncoder passwordEncoder;
+	private final PasswordEncoder passwordEncoder;
 
-    @PostConstruct
-    public void postConstruct() {
-        UserModel user = new UserModel();
-        user.setRole(UserRole.ADMIN);
-        user.setUserName("admin");
-        user.setPassword(passwordEncoder.encode("abc"));
-        users.add(user);
-    }
+//    @PostConstruct
+//    public void postConstruct() {
+//        UserModel user = new UserModel();
+//        user.setRole(UserRole.ADMIN);
+//        user.setUserName("admin");
+//        user.setPassword(passwordEncoder.encode("abc"));
+//        users.add(user);
+//    }
 
-    public void register(UserModel user) {
-        user.setRole(UserRole.USER);
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        users.add(user);
-    }
-
-    public UserModel findByName(String username) {
-        return users.stream().filter(user -> user.getUserName().equals(username))
-                .findFirst()
-                .orElse(null);
-    }
+	public UserModel register(UserModel userModel) {
+		userModel.setRole(UserRole.USER);
+		userModel.setPassword(passwordEncoder.encode(userModel.getPassword()));
+		return userRepository.save(userModel);
+	}
 
 }
